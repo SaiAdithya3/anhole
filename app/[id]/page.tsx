@@ -111,6 +111,7 @@ const pkage = ({ params }: any) => {
           <source src={`/api/uploads/${params.id}`} type={`video/mp4`} />
           Your browser does not support the video tag.
         </video>
+        <img src={`/api/uploads/${params.id}`} />
     </div>
   );
 };
