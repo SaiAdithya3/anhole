@@ -1,5 +1,6 @@
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import React, { useState } from "react";
+import axios from "axios";
 
 interface Props {
   onUpload: (files: File[]) => void;
@@ -10,6 +11,7 @@ interface FilePreview {
   preview: string;
   fileType: "image" | "video" | "pdf";
 }
+
 
 const FileUpload: React.FC<Props> = ({ onUpload }) => {
   const [filePreviews, setFilePreviews] = useState<FilePreview[]>([]);
@@ -49,7 +51,14 @@ const FileUpload: React.FC<Props> = ({ onUpload }) => {
 
   const { getRootProps, getInputProps } = useDropzone(dropzoneOptions);
 
+  const fileId = "64d8c60b3e0ad2975731b6af";
+  const getfiles = async () => {
+    // const files =await axios.get(`/api/uploads/${fileId}`);
+    // console.log(files);
+  }
+
   return (
+    <>
     <div {...getRootProps()} className="border-2 border-dashed border-gray-400 p-20 w-[30rem] h-[25rem] text-center flex items-center justify-center rounded-md">
       <div>
         <div>
@@ -75,13 +84,20 @@ const FileUpload: React.FC<Props> = ({ onUpload }) => {
               )}
               {fileType === "pdf" && (
                 <iframe src={preview} title={file.name} className="max-h-20 mx-auto" />
-              )}
+                )}
               <p className="text-sm text-gray-600">{file.name}</p>
             </div>
           ))}
         </div>
       </div>
     </div>
+    <div>
+      <button  onClick={getfiles} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Upload
+      </button>
+    </div>
+          </>
+    
   );
 };
 
