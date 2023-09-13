@@ -1,6 +1,12 @@
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import React, { useState } from "react";
 import axios from "axios";
+import { HiOutlineUpload } from "react-icons/hi";
+import { PiFilesLight } from "react-icons/pi";
+import { AxiosRequestConfig } from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import SimpleProgressBar from "@/components/progressbar";
 
 interface Props {
   onUpload: (files: File[]) => void;
@@ -15,6 +21,8 @@ interface FilePreview {
 
 const FileUpload: React.FC<Props> = ({ onUpload }) => {
   const [filePreviews, setFilePreviews] = useState<FilePreview[]>([]);
+  // const [remaining, setRemaining] = useState(0);
+  // const [progress, setProgress] = useState(0);
 
   const onDrop = (acceptedFiles: File[]) => {
     const promises = acceptedFiles.map((file) => {
@@ -57,19 +65,27 @@ const FileUpload: React.FC<Props> = ({ onUpload }) => {
     // console.log(files);
   }
 
+  const showToastMessage = () => {
+    toast.success('Success Notification !', {
+        position: toast.POSITION.BOTTOM_RIGHT
+    });
+};
+
   return (
     <>
-    <div {...getRootProps()} className="border-2 border-dashed border-gray-400 p-20 w-[30rem] h-[25rem] text-center flex items-center justify-center rounded-md">
-      <div>
+    <div {...getRootProps()} className="border-2 shadow-2xl shadow-indigo-900 border-dashed hover:border-double hover:border-4 border-indigo-300 p-20 sm:w-[30rem] sm:h-[30rem] text-center flex items-center justify-center rounded-full w-[23rem] h-[23rem] mx-auto">
+      <div className="">
+        <PiFilesLight className="text-white text-8xl m-auto mb-2 stroke-1 opacity-50"/>
+        <p className="text-center text-white text-md mb-10">
+          <strong>Drag and drop files here</strong>, or click to select files
+        </p>
         <div>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Upload
+          <button className="bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded-lg">
+          <HiOutlineUpload onClick={showToastMessage} className="inline mr-2 text-xl"/>Upload
           </button>
+          <ToastContainer />
         </div>
         <input {...getInputProps()} />
-        <p className="text-center">
-          Drag and drop files here, or click to select files
-        </p>
         <div className="mt-4">
           {filePreviews.map(({ file, preview, fileType }) => (
             <div key={file.name} className="mt-2">
@@ -92,9 +108,9 @@ const FileUpload: React.FC<Props> = ({ onUpload }) => {
       </div>
     </div>
     <div>
-      <button  onClick={getfiles} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      {/* <button  onClick={getfiles} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Upload
-      </button>
+      </button> */}
     </div>
           </>
     
