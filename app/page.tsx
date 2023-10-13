@@ -68,7 +68,7 @@ export default function Home() {
       <div className="main flex sm:flex-row flex-col-reverse">
         <div className="left">
 
-          <h1 className="text-2xl font-bold mb-4">Upload Files</h1>
+          {/* <h1 className="text-2xl font-bold mb-4">Upload Files</h1> */}
           {/* <FileListPage /> */}
           {sender ? (
             <AfterSender Uid={Uid} UidBrq={UidBrq} />

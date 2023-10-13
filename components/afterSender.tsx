@@ -48,14 +48,14 @@ const AfterSender: React.FC<AfterSenderProps> = ({ Uid, UidBrq }) => {
   };
 
   return (
-    <div className='border-2 flex flex-col shadow-2xl shadow-indigo-900 border-indigo-300 p-20 sm:w-[30rem] sm:h-[30rem] text-center flex items-center justify-center rounded-full w-[23rem] h-[23rem]'>
+    <div className='border-2 flex flex-col shadow-2xl shadow-indigo-900 border-indigo-300 p-20 sm:w-[30rem] sm:h-[30rem] text-center items-center justify-center rounded-full w-[23rem] h-[23rem]'>
       <h1 className='text-2xl font-extrabold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Your file is ready to share!</h1>
       {/* <p>afterSender with Uid: {Uid} and UidBrq: {UidBrq}</p> */}
       <p className='text-white text-sm mb-5'>Copy the link to share your file</p>
       <div className="flex items-center justify-center">
 
         <input type="text" value={links} className='w-full h-10 px-2 text-sm focus:outline-none focus:ring focus:border-indigo-300 rounded-md ' />
-        <button onClick={copyLink} className="bg-slate-300 ml-1 h-10 ml-1 hover:bg-slate-600 text-black hover:text-white text-xs font-bold py-2 px-4 rounded-lg">
+        <button onClick={copyLink} className="bg-slate-300 h-10 ml-1 hover:bg-slate-600 text-black hover:text-white text-xs font-bold py-2 px-4 rounded-lg">
           {isCopied ? <> <BsFillClipboardCheckFill className="text-xl" />  </> : <>  <BsClipboard className="text-xl" /> </>}
         </button>
       </div>
