@@ -54,7 +54,7 @@ const AfterSender: React.FC<AfterSenderProps> = ({ Uid, UidBrq }) => {
       <p className='text-white text-sm mb-5'>Copy the link to share your file</p>
       <div className="flex items-center justify-center">
 
-        <input type="text" value={links} className='w-full h-10 px-2 text-sm focus:outline-none focus:ring focus:border-indigo-300 rounded-md ' />
+        <input type="text" value={links} className='w-full h-10 px-2 text-sm focus:outline-none focus:ring text-black focus:border-indigo-300 rounded-md ' />
         <button onClick={copyLink} className="bg-slate-300 h-10 ml-1 hover:bg-slate-600 text-black hover:text-white text-xs font-bold py-2 px-4 rounded-lg">
           {isCopied ? <> <BsFillClipboardCheckFill className="text-xl" />  </> : <>  <BsClipboard className="text-xl" /> </>}
         </button>
@@ -78,7 +78,7 @@ const AfterSender: React.FC<AfterSenderProps> = ({ Uid, UidBrq }) => {
       <select
         value={selectedOption}
         onChange={handleSelectChange}
-        className="sm:px-2 sm:py-1 border rounded-md text-[9px] sm:text-xs h-full ml-2 font-bold"
+        className="sm:px-2 sm:py-1 text-black border rounded-md text-[9px] sm:text-xs h-full ml-2 font-bold"
         >
         <option value="">Select...</option>
         <option value="60">60 minutes</option>

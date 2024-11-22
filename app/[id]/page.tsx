@@ -123,7 +123,7 @@ const pkage = ({ params }: any) => {
       {/* <h1>Page {params.id}</h1> */}
       <h1 className='text-[1.2rem] sm:text-[2.2rem] font-extrabold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Yo, you've got some files!</h1>
 
-      <a href={`/api/uploads/${params.id}`} download className='bg-gradient-to-r from-slate-50 to-gray-200 m-auto sm:px-4 sm:py-6 px-2 py-3 my-2 rounded-full shadow-2xl shadow-indigo-300 border-indigo-700 border-2 hover:shadow-white hover:-translate-y-4 ease-in duration-300'>
+      <a href={`/api/uploads/${params.id}`} download className='text-black bg-gradient-to-r from-slate-50 to-gray-200 m-auto sm:px-4 sm:py-6 px-2 py-3 my-2 rounded-full shadow-2xl shadow-indigo-300 border-indigo-700 border-2 hover:shadow-white hover:-translate-y-4 ease-in duration-300'>
         <LiaDownloadSolid className="text-lg sm:text-4xl m-auto flex items-center" />
         <span className='text-sm sm:text-xs font-bold'>Download Files</span>
       </a>

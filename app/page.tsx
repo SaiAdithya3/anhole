@@ -64,7 +64,7 @@ export default function Home() {
 
 
   return (
-    <div className="container flex items-center justify-around">
+    <div className="container w-full h-[80vh] flex items-center justify-around">
       <div className="main flex sm:flex-row flex-col-reverse">
         <div className="left">
 
@@ -82,13 +82,13 @@ export default function Home() {
         </div>
 
 
-        <div className="right flex flex-col items-center justify-center px-12 py-10">
+        <div className="right flex flex-col items-start justify-center px-12 py-10">
         {/* <div className="arrow bg-no-repeat w-full h-1/4 ml-0 origin-center"></div> */}
           <div className="lock shadow-lg shadow-gray-800 text-white border-gray-50 border hover:border-indigo-300 rounded-full px-4 py-2 ">
             <span><BiLockAlt className="inline mr-1" />We care about your <strong>Privacy</strong></span>
           </div>
           <h1 className="text-white sm:text-[60px] text-[45px] font-bold py-5 flex flex-col items-center sm:flex-row sm:items-center">Send Files <span className="pl-3 font-extrabold text-transparent sm:text-[60px] text-[45px] bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Securely.</span></h1>
-          <p className="text-white">Anhole lets you share files with a link which automatically expires.</p>
+          <p className="text-white">Blackhole lets you share files with a link which automatically expires.</p>
         </div>
 
       </div>
